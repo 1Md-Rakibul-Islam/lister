@@ -11,9 +11,10 @@
 </head>
 
 <body>
+    <!-- main area start -->
     <main>
         <section class="container">
-            <div class="items users">
+            <div class="items">
                 <div class="card" draggable="true">
                     <div class="user-img">
                         <img src="assets/image/user1.png" alt="" srcset="">
@@ -33,12 +34,21 @@
                     </div>
                 </div>
             </div>
-            <div class="items">
-                <h2>Drag Here</h2>
+            <div class="items items2">
             </div>
         </section>
+        <section class="action-and-reault">
+            <div id="successMessage" class="success-message" style="display: none;">
+                Item dropped successfully!
+            </div>
+            <button class="reset-button glow-on-hover" onclick="resetContainers()">Reset</button>
+        </section>
     </main>
+    <!-- main area end -->
 
+    <!-- js script and files start -->
+    <script src="/js/app.js"></script>
+    <!-- js script and files end -->
 </body>
 
 </html>

@@ -16,6 +16,8 @@ body {
     justify-content: center;
 }
 
+/* container */
+
 .container {
     max-width: 1180px;
     height: 540px;
@@ -33,8 +35,9 @@ body {
     font-size: 18px;
     text-align: center;
 }
-  
 
+
+/* Item Styles*/
 .items {
     overflow-y: scroll;
     border: 2px dotted whitesmoke;
@@ -45,10 +48,8 @@ body {
     align-items: center;
 }
 
-/* card css start */
-
+/* card design start */
 .card {
-    /* width: 90%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,9 +57,14 @@ body {
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
-    /* box-shadow: 1px 2px 9px 0px; */
+    cursor: grab;
+    box-shadow: 1px 2px 9px 0px;
     background-color: black;
+    transition: background-color 0.3s ease;
+}
 
+.card.dragging {
+    opacity: 0.5;
 }
 
 .card img {
@@ -67,17 +73,98 @@ body {
     border-radius: 100%;
 }
 
-.user-details h5{
+.user-details h5 {
     color: whitesmoke;
 }
 
-.user-details h3{
+.user-details h3 {
     color: blueviolet;
 }
 
+/* card design end */
+
+
+/* Success message styles */
+.success-message {
+    color: rgb(16, 180, 79);
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+.action-and-reault {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reset button start */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* reset button end */
+
+/* webkit design start */
 ::-webkit-scrollbar {
     width: 8px;
     height: 5px;
     border-radius: 20px;
     scroll-behavior: smooth;
 }
+/* webkit design end */
